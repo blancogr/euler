@@ -1,5 +1,3 @@
-import java.util.stream.IntStream
-
 /**
  * Problem 1
  * If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9.
@@ -8,6 +6,7 @@ import java.util.stream.IntStream
  * Solution: 233168
  */
 fun problem1() = println((1..999).filter{ it % 3 == 0 || it % 5 == 0 }.sum())
+//problem1()
 
 /**
  * Problem 2
@@ -23,7 +22,7 @@ fun problem1() = println((1..999).filter{ it % 3 == 0 || it % 5 == 0 }.sum())
  * Solution: 4613732
  */
 fun problem2() = println(fibUpTo(4000000).filter { it % 2 == 0L }.sum())
-
+//problem2()
 
 /**
  * Problem 3
@@ -34,7 +33,7 @@ fun problem2() = println(fibUpTo(4000000).filter { it % 2 == 0L }.sum())
  * Result should be 6857
  */
 fun problem3() = println(primeFactors(600851475143).last())
-
+//problem3()
 
 /**
  * Problem 4
@@ -63,6 +62,7 @@ fun problem4() {
   })
   println("${left} * ${right} = ${product}")
 }
+//problem4()
 
 /**
  * Problem 5
@@ -85,7 +85,7 @@ fun problem5() {
     }
   }
 }
-problem5()
+//problem5()
 
 /**
  * Problem 6
@@ -117,7 +117,10 @@ problem5()
  * The result should be 25164150 (sumOfSq = 338350, sqOfSum = 25502500)
  *
  */
-
+fun problem6() {
+  println("TODO problem 6")
+}
+problem6()
 
 
 

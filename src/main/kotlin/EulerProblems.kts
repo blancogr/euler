@@ -1,3 +1,5 @@
+package euler
+
 /**
  * Problem 1
  * If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9.
@@ -118,17 +120,35 @@ fun problem5() {
  *
  */
 fun problem6() {
-  println("TODO problem 6")
+  val squareOfSum = Math.pow(100 * 101 / 2.0, 2.0).toLong()
+  val sumOfSquares = 100 * 101 * 201 / 6
+  println(squareOfSum - sumOfSquares)
 }
-problem6()
 
-
-
-
-
-
+/**
+ * Problem
+ *
+ * By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th prime is 13.
+ * What is the 10 001st prime number?
+ *
+ * Methods to determine primality (see https://en.wikipedia.org/wiki/Primality_test):
+ *
+ * 1. Trial division. Simplest but computationally intensive.
+ *     For an input n, test that n / 2..sqrt(n) always gives a remainder. If there's a remainder == 0, the number is NOT prime.
+ *
+ * 2. Test remainder for 2 and 3. Then, test remainder for n / p where p is all numbers (6k +- 1) < sqrt(n), and k = integers
+ *
+ * The answer is 104743
+ */
 
 // helper functions
+fun isPrimeByDivision(n: Long): Boolean {
+  (2..Math.sqrt(n)).forEach(
+    if(n % it == 0) return false
+    return true
+  )
+}
+
 fun fibUpTo(roof: Long): MutableList<Long> {
   var twoBefore = 0L
   var oneBefore = 1L

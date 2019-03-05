@@ -1,4 +1,4 @@
-package org.blancogr;
+package tdd;
 
 import java.math.BigInteger;
 import java.util.*;
@@ -116,5 +116,10 @@ public class EulerUtils {
             .boxed()
             .map(BigInteger::valueOf)
             .reduce(BigInteger.ONE, BigInteger::multiply);
+    }
+
+    static List<Long> newFibUbTo(Long n) {
+
+
     }
 }

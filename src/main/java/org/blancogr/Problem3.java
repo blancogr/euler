@@ -2,11 +2,11 @@ package org.blancogr;
 
 import com.jamonapi.Monitor;
 import com.jamonapi.MonitorFactory;
+import org.blancogr.tdd.EulerUtils;
 
 import java.math.BigInteger;
 import java.util.List;
 
-import static org.blancogr.EulerUtils.primeFactors;
 
 /**
  * Created by blancogr on 1/9/17.

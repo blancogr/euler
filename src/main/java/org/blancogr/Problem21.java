@@ -1,6 +1,8 @@
 package org.blancogr;
 
 
+import org.blancogr.tdd.EulerUtils;
+
 import java.util.*;
 
 /**

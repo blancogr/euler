@@ -1,5 +1,7 @@
 package org.blancogr;
 
+import org.blancogr.tdd.EulerUtils;
+
 /**
  * Created by blancogr on 1/21/17.
  */

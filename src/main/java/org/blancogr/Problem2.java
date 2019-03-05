@@ -2,6 +2,7 @@ package org.blancogr;
 
 import com.jamonapi.Monitor;
 import com.jamonapi.MonitorFactory;
+import org.blancogr.tdd.EulerUtils;
 
 import java.util.List;
 

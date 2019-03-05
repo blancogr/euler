@@ -1,4 +1,4 @@
-package tdd;
+package org.blancogr.tdd;
 
 import java.math.BigInteger;
 import java.util.*;
@@ -12,7 +12,7 @@ import static java.util.stream.Collectors.groupingBy;
  */
 public class EulerUtils {
 
-    static List<Long> fibUpTo(Long n) {
+    public static List<Long> fibUpTo(Long n) {
         List<Long> fibs = new ArrayList<>();
         Long a = 0L, b = 1L, c = 1L;
 
@@ -26,7 +26,7 @@ public class EulerUtils {
 
     }
 
-    static Boolean isPrime(Long number) {
+    public static Boolean isPrime(Long number) {
         if (number <= 1) return false;
         if (number <= 3) return true;
         if (number % 2 == 0 || number % 3 == 0) return false;
@@ -39,7 +39,7 @@ public class EulerUtils {
         return true;
     }
 
-    static List<BigInteger> primeFactors(BigInteger n) {
+    public static List<BigInteger> primeFactors(BigInteger n) {
         List<BigInteger> factors = new ArrayList<>();
         BigInteger n2 = n, i = new BigInteger("2");
 
@@ -54,7 +54,7 @@ public class EulerUtils {
         return factors;
     }
 
-    static List<Long> primeFactors(Long number) {
+    public static List<Long> primeFactors(Long number) {
         List<Long> factors = new ArrayList<>();
 
         Long n = number;
@@ -71,7 +71,7 @@ public class EulerUtils {
         return factors;
     }
 
-    static List<Integer> factorsList(Integer n) {
+    public static List<Integer> factorsList(Integer n) {
         List<Integer> factors = new ArrayList<>();
         factors.add(1);
 
@@ -86,7 +86,7 @@ public class EulerUtils {
         return factors;
     }
 
-    static Optional factors(Long n) {
+    public static Optional factors(Long n) {
         List<Long> factors = new ArrayList<>();
         factors.add(1L);
 
@@ -101,7 +101,7 @@ public class EulerUtils {
         return Optional.of(factors);
     }
 
-    static Integer numberOfPrimeDivisors(Long n) {
+    public static Integer numberOfPrimeDivisors(Long n) {
         Map<Long, List<Long>> divisors = primeFactors(n).stream().collect(groupingBy(Function.identity()));
 
         Optional<Integer> numDivisors =
@@ -110,7 +110,7 @@ public class EulerUtils {
         return numDivisors.orElse(0);
     }
 
-    static BigInteger factorial(Integer n) {
+    public static BigInteger factorial(Integer n) {
         return IntStream.range(1, n)
             .asLongStream()
             .boxed()
@@ -118,8 +118,21 @@ public class EulerUtils {
             .reduce(BigInteger.ONE, BigInteger::multiply);
     }
 
-    static List<Long> newFibUbTo(Long n) {
+    public static List<Long> newFibUbTo(Long roof) {
+        ArrayList<Long> toReturn = new ArrayList<>(Arrays.asList(1L, 1L));
+        if(roof <= 0) return null;
+        if(roof == 1) return Arrays.asList(1L);
+        if(roof == 2) return Arrays.asList(1L, 1L, 2L);
+        Long it = 2L;
+        Long prev = 1L;
+        Long twoBehind;
 
-
+        while(it <= roof) {
+            toReturn.add(it);
+            twoBehind = prev;
+            prev = it;
+            it = prev + twoBehind;
+        }
+        return toReturn;
     }
 }

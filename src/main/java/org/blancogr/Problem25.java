@@ -1,7 +1,5 @@
 package org.blancogr;
 
-import com.sun.prism.shader.Solid_TextureFirstPassLCD_AlphaTest_Loader;
-
 import java.math.BigInteger;
 
 import static java.lang.Math.log;
@@ -54,7 +52,7 @@ import static java.lang.Math.log;
  *
  * Implemented below
  */
-public class Project25 {
+public class Problem25 {
     public static void main(String[] args) {
         mine();
         theirs();
@@ -65,7 +63,7 @@ public class Project25 {
         BigInteger minusTwo = new BigInteger("1");
 
 
-        Long index = 3L; // because the first two numbers are set
+        long index = 3L; // because the first two numbers are set
         while(true) {
             BigInteger newNumber = minusOne.add(minusTwo);
             if(newNumber.toString().length() < 1000) {
@@ -80,8 +78,8 @@ public class Project25 {
     }
 
     public static void theirs() {
-        Double phi = (1 + Math.sqrt(5)) / 2;
-        Double lowerBound = (999 * log(10) + log(5) / 2) / log(phi);
+        double phi = (1 + Math.sqrt(5)) / 2;
+        double lowerBound = (999 * log(10) + log(5) / 2) / log(phi);
         System.out.println("Result (theirs) is: " + Math.round(lowerBound));
     }
 }

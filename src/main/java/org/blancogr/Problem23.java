@@ -30,7 +30,7 @@ import java.util.stream.IntStream;
  * the sum of two abundant numbers.
  */
 
-public class Project23 {
+public class Problem23 {
     public static void main(String[] args) {
         long start = System.currentTimeMillis();
         theirs(); // 1645 milliseconds
@@ -57,11 +57,11 @@ public class Project23 {
 
         long count = 0;
         for(int x = 0; x < abundant.size(); x++) {
-            for(int y = 0; y < abundant.size(); y++) {
-                long sum = abundant.get(x) + abundant.get(y);
+            for (Integer integer : abundant) {
+                long sum = abundant.get(x) + integer;
 
                 int index = digits.indexOf(sum);
-                if(index != -1) {
+                if (index != -1) {
                     digits.remove(index);
                 }
                 count++;
@@ -113,10 +113,7 @@ public class Project23 {
         if(factors.isPresent()) {
             List<Long> them = factors.get();
             long sum = them.stream().mapToLong(x -> x).sum();
-
-            if(sum > n) {
-                return true;
-            }
+            return sum > n;
         }
         return false;
     }
@@ -124,10 +121,7 @@ public class Project23 {
     private static boolean isAbundant2(int i) {
         int sumOfFactors = EulerUtils.factorsList(i).stream().mapToInt(x -> x).sum();
 
-        if(sumOfFactors > i) {
-            return true;
-        }
-        return false;
+        return sumOfFactors > i;
     }
 
     private static boolean isAbundant3(int i) {

@@ -18,7 +18,7 @@ import static java.util.stream.Collectors.toList;
  *
  * Answer: 2783915460
  */
-public class Project24 {
+public class Problem24 {
     public static void main(String[] args) {
 
         ArrayList<String> buffer = new ArrayList<>();

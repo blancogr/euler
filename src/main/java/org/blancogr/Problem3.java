@@ -18,12 +18,12 @@ import java.util.List;
  */
 public class Problem3 {
     public static void main(String[] args) {
-        Monitor m = MonitorFactory.start("Problem3");
+        Monitor m = MonitorFactory.start("Problem 3");
         BigInteger top = new BigInteger("600851475143");
         List<BigInteger> factors = EulerUtils.primeFactors(top);
-
         m.stop();
-        System.out.println(factors.stream().max(BigInteger::compareTo).get());
-        System.out.println(m.toString());
+
+        System.out.println(factors.stream().max(BigInteger::compareTo).orElseGet(() -> BigInteger.valueOf(-1L)));
+        System.out.println(m);
     }
 }

@@ -16,11 +16,11 @@ import com.jamonapi.MonitorFactory;
 public class Problem4 {
     public static void main(String[] args) {
         Monitor m = MonitorFactory.start("Problem4");
-        Integer n1 = 0, n2 = 0, product = 0;
+        int n1 = 0, n2 = 0, product = 0;
         for(int i = 2; i < 999; i++) {
             for(int j = 2; j < 999; j++) {
-                Integer number = i * j;
-                if(number.toString().equals(new StringBuilder(number.toString()).reverse().toString())
+                int number = i * j;
+                if(Integer.toString(number).equals(new StringBuilder(Integer.toString(number)).reverse().toString())
                         && i * j > product) {
                     n1 = i; n2 = j; product = i * j;
                 }
@@ -28,7 +28,7 @@ public class Problem4 {
         }
         m.stop();
         System.out.println("N1: " + n1 + ", N2: " + n2 + " = " + product);
-        System.out.println(m.toString());
+        System.out.println(m);
 
     }
 }

@@ -15,7 +15,7 @@ import java.util.stream.LongStream;
  */
 public class Problem1 {
     public static void main(String[] args) {
-        Monitor m = MonitorFactory.start("Problem1");
+        Monitor m = MonitorFactory.start("Problem 1");
         long result = LongStream.range(1, 1000).reduce(0, (a, b) -> {
             if (b % 3 == 0 || b % 5 == 0) {
                 return a + b;
@@ -24,6 +24,6 @@ public class Problem1 {
         });
         m.stop();
         System.out.println(result);
-        System.out.println(m.toString());
+        System.out.println(m);
     }
 }

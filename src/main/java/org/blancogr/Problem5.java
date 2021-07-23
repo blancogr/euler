@@ -16,7 +16,7 @@ public class Problem5 {
         Monitor m = MonitorFactory.start("Problem5");
 
         for(int i = 2521; i < Integer.MAX_VALUE; i++) {
-            Boolean isResult = true;
+            boolean isResult = true;
             for(int mult = 2; mult <=20; mult++) {
                 if(i % mult != 0) {
                     isResult = false;
@@ -31,6 +31,6 @@ public class Problem5 {
         }
 
         m.stop();
-        System.out.println(m.toString());
+        System.out.println(m);
     }
 }

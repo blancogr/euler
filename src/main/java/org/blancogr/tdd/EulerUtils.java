@@ -1,7 +1,13 @@
 package org.blancogr.tdd;
 
 import java.math.BigInteger;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+import java.util.Map;
+import java.util.Objects;
+import java.util.Optional;
 import java.util.function.Function;
 import java.util.stream.IntStream;
 
@@ -14,7 +20,7 @@ public class EulerUtils {
 
     public static List<Long> fibUpTo(Long n) {
         List<Long> fibs = new ArrayList<>();
-        Long a = 0L, b = 1L, c = 1L;
+        long a = 0L, b = 1L, c = 1L;
 
         while (c < n) {
             c = a + b;
@@ -31,7 +37,7 @@ public class EulerUtils {
         if (number <= 3) return true;
         if (number % 2 == 0 || number % 3 == 0) return false;
 
-        int n = 5;
+        long n = 5;
         while (n * n <= number) {
             if (number % n == 0 || number % (n + 2) == 0) return false;
             n += 6;
@@ -77,7 +83,7 @@ public class EulerUtils {
 
         if (n % 2 == 0 && n != 2) factors.add(2);
 
-        double upToIncluding = n / 2;
+        double upToIncluding = n / 2f;
         for (Integer i = 3; i <= upToIncluding; i++) {
             if (n % i == 0) {
                 factors.add(i);
@@ -86,13 +92,13 @@ public class EulerUtils {
         return factors;
     }
 
-    public static Optional factors(Long n) {
+    public static Optional<List<Long>> factors(Long n) {
         List<Long> factors = new ArrayList<>();
         factors.add(1L);
 
         if (n % 2 == 0 && n != 2) factors.add(2L);
 
-        double upToIncluding = n / 2;
+        double upToIncluding = n / 2f;
         for (Long i = 3L; i <= upToIncluding; i++) {
             if (n % i == 0) {
                 factors.add(i);
@@ -121,11 +127,11 @@ public class EulerUtils {
     public static List<Long> newFibUbTo(Long roof) {
         ArrayList<Long> toReturn = new ArrayList<>(Arrays.asList(1L, 1L));
         if(roof <= 0) return null;
-        if(roof == 1) return Arrays.asList(1L);
+        if(roof == 1) return Collections.singletonList(1L);
         if(roof == 2) return Arrays.asList(1L, 1L, 2L);
-        Long it = 2L;
-        Long prev = 1L;
-        Long twoBehind;
+        long it = 2L;
+        long prev = 1L;
+        long twoBehind;
 
         while(it <= roof) {
             toReturn.add(it);

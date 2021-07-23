@@ -21,12 +21,12 @@ import java.util.List;
  */
 public class Problem2 {
     public static void main(String[] args) {
-        Monitor m = MonitorFactory.start("Problem2");
+        Monitor m = MonitorFactory.start("Problem 2");
         List<Long> fibs = EulerUtils.fibUpTo(4000000L);
-        Long sum = fibs.stream().filter(x -> x % 2 == 0).reduce(0L, (a, b) -> a + b);
+        Long sum = fibs.stream().filter(x -> x % 2 == 0).reduce(0L, Long::sum);
         m.stop();
         System.out.println(sum);
-        System.out.println(m.toString());
+        System.out.println(m);
     }
 
 }

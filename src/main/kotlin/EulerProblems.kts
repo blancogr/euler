@@ -221,7 +221,7 @@ fun problem8() {
   var result:Long = 0
   (0..987).forEach {
     val numbers = (theNumber.substring(it..it + 12).map { Character.getNumericValue(it).toLong() })
-    val product = numbers.fold(1L, { sum, last -> sum * last })
+    val product = numbers.fold(1L, { number, last -> number * last })
     if (product > result) result = product
   }
   println(result)
